@@ -2,13 +2,13 @@
 
 App to explore jetpack compose 
 
-## Shared Element Transition
+## Payment Card
     
-   Screen element transition using compose lib
+   Payment card with animations
    
 #### Preview
 
 
-|    Shared Element Transition #1     |    Shared Element Transition #2     |
-|:-----------------------------------:|:-----------------------------------:|
-| <img src="images/amphitrite_1.png"> | <img src="images/amphitrite_2.png"> |
+|              Payment Card #1               |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_1.jpg"> |
