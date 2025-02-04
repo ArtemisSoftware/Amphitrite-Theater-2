@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
+import com.artemissoftware.amphitritetheater2.paymentcard.PaymentCardScreen
 
 @Composable
 fun DemoNavGraph(
@@ -21,7 +22,7 @@ fun DemoNavGraph(
 
 
         composable<Route.PaymentCard> {
-
+            PaymentCardScreen()
         }
 
         composable<Route.Home> {
