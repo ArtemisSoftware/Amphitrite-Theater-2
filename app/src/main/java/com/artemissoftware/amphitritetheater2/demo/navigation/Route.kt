@@ -12,12 +12,16 @@ sealed class Route {
 
     @Serializable
     object ContextDropDownMenu
+
+    @Serializable
+    object ReorderingList
 }
 
 sealed class Destination(val title: String) {
     data object Home : Destination(title = "Demo")
     data object PaymentCard : Destination(title = "Payment Card")
     data object ContextDropDownMenu : Destination(title = "Context Drop Down Menu")
+    data object ReorderingList : Destination(title = "Reordering List")
 
     companion object{
 
@@ -26,14 +30,15 @@ sealed class Destination(val title: String) {
             return when(destination){
                 PaymentCard -> Route.PaymentCard
                 ContextDropDownMenu -> Route.ContextDropDownMenu
+                ReorderingList -> Route.ReorderingList
                 else -> Route.Home
             }
         }
 
         val demos = listOf(
-            Home,
             PaymentCard,
-            ContextDropDownMenu
+            ContextDropDownMenu,
+            ReorderingList
         ).sortedBy { it.title }
     }
 }

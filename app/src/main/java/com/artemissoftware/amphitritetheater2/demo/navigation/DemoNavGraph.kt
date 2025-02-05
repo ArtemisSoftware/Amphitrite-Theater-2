@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
 import com.artemissoftware.amphitritetheater2.paymentcard.PaymentCardScreen
+import com.artemissoftware.amphitritetheater2.reorderinglist.ReorderingListScreen
 
 @Composable
 fun DemoNavGraph(
@@ -26,6 +27,10 @@ fun DemoNavGraph(
 
         composable<Route.PaymentCard> {
             PaymentCardScreen()
+        }
+
+        composable<Route.ReorderingList> {
+            ReorderingListScreen()
         }
 
         composable<Route.Home> {

@@ -9,4 +9,6 @@
     <string name="save">save</string>
     <string name="expiry">Expiry</string>
     <string name="card_holder">Card holder</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="i_love">I love %1$s!</string>
 </resources>
