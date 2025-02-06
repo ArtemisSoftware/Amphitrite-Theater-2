@@ -15,6 +15,9 @@ sealed class Route {
 
     @Serializable
     object ReorderingList
+
+    @Serializable
+    object ImageCaching
 }
 
 sealed class Destination(val title: String) {
@@ -22,6 +25,7 @@ sealed class Destination(val title: String) {
     data object PaymentCard : Destination(title = "Payment Card")
     data object ContextDropDownMenu : Destination(title = "Context Drop Down Menu")
     data object ReorderingList : Destination(title = "Reordering List")
+    data object ImageCaching : Destination(title = "Image Caching")
 
     companion object{
 
@@ -31,6 +35,7 @@ sealed class Destination(val title: String) {
                 PaymentCard -> Route.PaymentCard
                 ContextDropDownMenu -> Route.ContextDropDownMenu
                 ReorderingList -> Route.ReorderingList
+                ImageCaching -> Route.ImageCaching
                 else -> Route.Home
             }
         }
@@ -38,7 +43,8 @@ sealed class Destination(val title: String) {
         val demos = listOf(
             PaymentCard,
             ContextDropDownMenu,
-            ReorderingList
+            ReorderingList,
+            ImageCaching
         ).sortedBy { it.title }
     }
 }
