@@ -45,3 +45,14 @@ Swipe list item to show option
 |               List swipe #1                |    
 |:------------------------------------------:|
 | <img src="images/AmphitriteTheater_4.jpg"> |
+
+## Bouncing ball
+
+Bouncing ball animation
+
+#### Preview
+
+
+|              Bouncing ball #1              |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> |

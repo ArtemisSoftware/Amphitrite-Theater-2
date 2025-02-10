@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.artemissoftware.amphitritetheater2.bouncingball.BouncingBallScreen
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
 import com.artemissoftware.amphitritetheater2.imagecaching.ImageCachingScreen
@@ -23,6 +24,10 @@ fun DemoNavGraph(
         startDestination = startDestination,
         modifier = modifier
     ) {
+        composable<Route.BouncingBall> {
+            BouncingBallScreen()
+        }
+
         composable<Route.ContextDropDownMenu> {
             ContextDropDownScreen()
         }
