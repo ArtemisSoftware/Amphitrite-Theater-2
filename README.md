@@ -34,3 +34,14 @@ Reordering list with animations
 |             Reordering list #1             |    
 |:------------------------------------------:|
 | <img src="images/AmphitriteTheater_3.jpg"> |
+
+## List swipe
+
+Swipe list item to show option
+
+#### Preview
+
+
+|               List swipe #1                |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_4.jpg"> |

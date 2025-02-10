@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
 import com.artemissoftware.amphitritetheater2.imagecaching.ImageCachingScreen
+import com.artemissoftware.amphitritetheater2.listswipe.ListSwipeScreen
 import com.artemissoftware.amphitritetheater2.paymentcard.PaymentCardScreen
 import com.artemissoftware.amphitritetheater2.reorderinglist.ReorderingListScreen
 
@@ -25,8 +26,13 @@ fun DemoNavGraph(
         composable<Route.ContextDropDownMenu> {
             ContextDropDownScreen()
         }
+
         composable<Route.ImageCaching> {
             ImageCachingScreen()
+        }
+
+        composable<Route.ListSwipe> {
+            ListSwipeScreen()
         }
 
         composable<Route.PaymentCard> {

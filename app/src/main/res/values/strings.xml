@@ -12,4 +12,8 @@
     <string name="shuffle">Shuffle</string>
     <string name="i_love">I love %1$s!</string>
     <string name="clear_cache">Clear cache</string>
+    <string name="contact_was_deleted">Contact %1$s was deleted.</string>
+    <string name="contact_was_sent_an_email">Contact %1$s was sent an email.</string>
+    <string name="contact_was_shared">Contact %1$s was shared.</string>
+    <string name="contact">Contact %1$s</string>
 </resources>

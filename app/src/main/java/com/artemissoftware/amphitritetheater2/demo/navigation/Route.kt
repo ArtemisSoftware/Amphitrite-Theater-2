@@ -18,6 +18,9 @@ sealed class Route {
 
     @Serializable
     object ImageCaching
+
+    @Serializable
+    object ListSwipe
 }
 
 sealed class Destination(val title: String) {
@@ -26,6 +29,7 @@ sealed class Destination(val title: String) {
     data object ContextDropDownMenu : Destination(title = "Context Drop Down Menu")
     data object ReorderingList : Destination(title = "Reordering List")
     data object ImageCaching : Destination(title = "Image Caching")
+    data object ListSwipe : Destination(title = "Custom Swipe to Reveal")
 
     companion object{
 
@@ -36,6 +40,7 @@ sealed class Destination(val title: String) {
                 ContextDropDownMenu -> Route.ContextDropDownMenu
                 ReorderingList -> Route.ReorderingList
                 ImageCaching -> Route.ImageCaching
+                ListSwipe -> Route.ListSwipe
                 else -> Route.Home
             }
         }
@@ -44,7 +49,8 @@ sealed class Destination(val title: String) {
             PaymentCard,
             ContextDropDownMenu,
             ReorderingList,
-            ImageCaching
+            ImageCaching,
+            ListSwipe
         ).sortedBy { it.title }
     }
 }
