@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.bouncingball.BouncingBallScreen
+import com.artemissoftware.amphitritetheater2.circlereveal.CircleRevealScreen
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
 import com.artemissoftware.amphitritetheater2.imagecaching.ImageCachingScreen
@@ -26,6 +27,10 @@ fun DemoNavGraph(
     ) {
         composable<Route.BouncingBall> {
             BouncingBallScreen()
+        }
+
+        composable<Route.CircleReveal> {
+            CircleRevealScreen()
         }
 
         composable<Route.ContextDropDownMenu> {
