@@ -37,7 +37,7 @@ sealed class Destination(val title: String) {
     data object ImageCaching : Destination(title = "Image Caching")
     data object ListSwipe : Destination(title = "Custom Swipe to Reveal")
     data object BouncingBall : Destination(title = "Bouncing Ball animation")
-    data object CircleReveal : Destination(title = "Circle Riveal Animation On Pager")
+    data object CircleReveal : Destination(title = "Circle Reveal Animation On Pager")
 
     companion object{
 
