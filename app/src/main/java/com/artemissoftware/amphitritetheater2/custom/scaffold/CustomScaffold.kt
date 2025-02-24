@@ -24,6 +24,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.artemissoftware.amphitritetheater2.custom.error.ErrorScreen
+import com.artemissoftware.amphitritetheater2.custom.error.ErrorState
 import com.artemissoftware.amphitritetheater2.ui.theme.AmphitriteTheater2Theme
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.seconds
@@ -33,7 +35,7 @@ fun CustomScaffold(
     content: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     isLoading: Boolean = false,
-    //error: ErrorData? = null,
+    errorState: ErrorState? = null,
 ) {
 
     Box(
@@ -71,14 +73,9 @@ fun CustomScaffold(
             )
 
 
-//        error?.let {
-//            PlaceHolderContent(
-//                icon = R.drawable.ic_pokeball,
-//                message = it.message.asString(),
-//                onClick = it.onClick,
-//                buttonText = it.buttonText.asString(),
-//            )
-//        }
+        errorState?.let {
+            ErrorScreen(error = it)
+        }
     }
 }
 
@@ -96,8 +93,16 @@ private fun CustomScaffoldPreview() {
             }
         }
 
+        var errorState by remember { mutableStateOf<ErrorState?>(null) }
+        val error = ErrorState(
+            title = "You arrived at an error screen",
+            onFinish = { errorState = null }
+        )
+
+
         CustomScaffold(
             isLoading = isLoading,
+            errorState = errorState,
             content = {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -108,6 +113,14 @@ private fun CustomScaffoldPreview() {
                         onClick = { isLoading = !isLoading },
                         content = {
                             Text("Toggle is loading")
+                        }
+                    )
+                    Button(
+                        onClick = {
+                            errorState = error
+                        },
+                        content = {
+                            Text("Toggle error")
                         }
                     )
                 }
