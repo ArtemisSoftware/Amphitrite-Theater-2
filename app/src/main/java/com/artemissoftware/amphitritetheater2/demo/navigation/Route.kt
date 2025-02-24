@@ -27,6 +27,9 @@ sealed class Route {
 
     @Serializable
     object CircleReveal
+
+    @Serializable
+    object CustomScaffold
 }
 
 sealed class Destination(val title: String) {
@@ -38,6 +41,7 @@ sealed class Destination(val title: String) {
     data object ListSwipe : Destination(title = "Custom Swipe to Reveal")
     data object BouncingBall : Destination(title = "Bouncing Ball animation")
     data object CircleReveal : Destination(title = "Circle Reveal Animation On Pager")
+    data object CustomScaffold : Destination(title = "Custom - Scaffold")
 
     companion object{
 
@@ -51,6 +55,7 @@ sealed class Destination(val title: String) {
                 ListSwipe -> Route.ListSwipe
                 BouncingBall -> Route.BouncingBall
                 CircleReveal -> Route.CircleReveal
+                CustomScaffold -> Route.CustomScaffold
                 else -> Route.Home
             }
         }
@@ -62,7 +67,8 @@ sealed class Destination(val title: String) {
             ImageCaching,
             ListSwipe,
             BouncingBall,
-            CircleReveal
+            CircleReveal,
+            CustomScaffold
         ).sortedBy { it.title }
     }
 }

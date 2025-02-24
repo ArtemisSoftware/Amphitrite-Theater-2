@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.bouncingball.BouncingBallScreen
 import com.artemissoftware.amphitritetheater2.circlereveal.CircleRevealScreen
+import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldScreen
+import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldViewModel
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
 import com.artemissoftware.amphitritetheater2.imagecaching.ImageCachingScreen
@@ -18,7 +20,8 @@ import com.artemissoftware.amphitritetheater2.reorderinglist.ReorderingListScree
 fun DemoNavGraph(
     startDestination: Any = Route.Home,
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    customScaffoldStateViewModel: CustomScaffoldViewModel
 ) {
     NavHost(
         navController = navController,
@@ -35,6 +38,10 @@ fun DemoNavGraph(
 
         composable<Route.ContextDropDownMenu> {
             ContextDropDownScreen()
+        }
+
+        composable<Route.CustomScaffold> {
+            CustomScaffoldScreen(viewModel = customScaffoldStateViewModel)
         }
 
         composable<Route.ImageCaching> {

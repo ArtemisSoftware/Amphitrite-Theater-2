@@ -2,6 +2,20 @@
 
 App to explore jetpack compose 
 
+## Custom Composables
+
+#### Snackbar
+
+A custom snackbar
+
+
+#### Scaffold
+
+A custom scaffold that is able to show
+- loading
+- error
+- snack bar
+
 ## Payment Card
     
    Payment card with animations
@@ -56,3 +70,16 @@ Bouncing ball animation
 |              Bouncing ball #1              |    
 |:------------------------------------------:|
 | <img src="images/AmphitriteTheater_5.jpg"> |
+
+## Circle Reveal Animation On Pager
+
+
+Circle Reveal Animation On Pager whe user swipes
+
+#### Preview
+
+
+|    Circle Reveal Animation On Pager #1     |    Circle Reveal Animation On Pager #2     |    Circle Reveal Animation On Pager #3     |
+|:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> | <img src="images/AmphitriteTheater_5.jpg"> | <img src="images/AmphitriteTheater_5.jpg"> |
+
