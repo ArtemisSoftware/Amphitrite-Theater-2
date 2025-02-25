@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.artemissoftware.amphitritetheater2.bouncingball.BouncingBallScreen
 import com.artemissoftware.amphitritetheater2.circlereveal.CircleRevealScreen
+import com.artemissoftware.amphitritetheater2.clippedcircle.ClippedCircleScreen
 import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldScreen
 import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldViewModel
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
@@ -34,6 +35,10 @@ fun DemoNavGraph(
 
         composable<Route.CircleReveal> {
             CircleRevealScreen()
+        }
+
+        composable<Route.ClippedCircle> {
+            ClippedCircleScreen()
         }
 
         composable<Route.ContextDropDownMenu> {

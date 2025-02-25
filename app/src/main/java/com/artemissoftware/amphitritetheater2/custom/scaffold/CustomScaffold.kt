@@ -33,7 +33,10 @@ import com.artemissoftware.amphitritetheater2.custom.util.events.UiEvent
 import com.artemissoftware.amphitritetheater2.ui.theme.AmphitriteTheater2Theme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 @Composable
@@ -107,6 +110,7 @@ private fun CustomScaffoldPreview() {
     AmphitriteTheater2Theme {
 
         var isLoading by remember { mutableStateOf(false) }
+        val scope = rememberCoroutineScope()
 
         LaunchedEffect(isLoading) {
             if(isLoading){
@@ -122,13 +126,14 @@ private fun CustomScaffoldPreview() {
         )
 
         var index by remember { mutableIntStateOf(1) }
-        var snackbar by remember { mutableStateOf<CustomSnackbar?>(null) }
 
+        val lolo: Flow<UiEvent.Snackbar> = flowOf(UiEvent.Snackbar(CustomSnackbar.Success("I am the success $index")))
+        val snackbarFlow  = remember { MutableSharedFlow<UiEvent.Snackbar>() }
 
         CustomScaffold(
+            uiEvent = snackbarFlow,
             isLoading = isLoading,
             errorState = errorState,
-            snackbar = snackbar,
             content = {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -151,7 +156,10 @@ private fun CustomScaffoldPreview() {
                     )
                     Button(
                         onClick = {
-                            snackbar = CustomSnackbar.Success("I am the success $index")
+                            scope.launch {
+                                snackbarFlow.emit(UiEvent.Snackbar(CustomSnackbar.Success("I am the success $index")))
+                            }
+
                             ++index
                         },
                         content = {
