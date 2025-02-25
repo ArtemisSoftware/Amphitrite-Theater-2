@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.constraintlayout.compose)
     implementation(libs.coil)
     implementation(libs.coil.network.okhttp)
+    implementation(libs.snapper)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

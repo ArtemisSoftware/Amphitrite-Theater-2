@@ -83,3 +83,26 @@ Circle Reveal Animation On Pager whe user swipes
 |:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|
 | <img src="images/AmphitriteTheater_5.jpg"> | <img src="images/AmphitriteTheater_5.jpg"> | <img src="images/AmphitriteTheater_5.jpg"> |
 
+
+## Clipped Circle
+
+A line of clipped circles
+
+#### Preview
+
+
+|             Clipped Circle #1              |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> |
+
+
+## Dagger-WheelPicker
+
+A custom wheel picker
+
+#### Preview
+
+
+|           Dagger-WheelPicker #1            |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> |

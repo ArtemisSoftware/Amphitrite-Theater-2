@@ -14,6 +14,7 @@ kotlinxSerializationJson = "1.7.3"
 constraintlayout-compose = "1.0.0"
 coil = "3.1.0"
 coil-network-okhttp = "3.0.4"
+snapper = "0.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +40,7 @@ constraintlayout-compose = { group = "androidx.constraintlayout", name = "constr
 coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil-network-okhttp" }
 
+snapper = { group = "dev.chrisbanes.snapper", name = "snapper", version.ref = "snapper" }
 
 
 [plugins]
