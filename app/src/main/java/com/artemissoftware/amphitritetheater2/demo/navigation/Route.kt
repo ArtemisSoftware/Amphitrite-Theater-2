@@ -33,6 +33,9 @@ sealed class Route {
 
     @Serializable
     object ClippedCircle
+
+    @Serializable
+    object DaggerWheelPicker
 }
 
 sealed class Destination(val title: String) {
@@ -46,6 +49,7 @@ sealed class Destination(val title: String) {
     data object CircleReveal : Destination(title = "Circle Reveal Animation On Pager")
     data object CustomScaffold : Destination(title = "Custom - Scaffold")
     data object ClippedCircle : Destination(title = "Clipped Circle")
+    data object DaggerWheelPicker : Destination(title = "Dagger Wheel Picker")
 
     companion object{
 
@@ -61,6 +65,7 @@ sealed class Destination(val title: String) {
                 CircleReveal -> Route.CircleReveal
                 CustomScaffold -> Route.CustomScaffold
                 ClippedCircle -> Route.ClippedCircle
+                DaggerWheelPicker -> Route.DaggerWheelPicker
                 else -> Route.Home
             }
         }
@@ -74,7 +79,8 @@ sealed class Destination(val title: String) {
             BouncingBall,
             CircleReveal,
             CustomScaffold,
-            ClippedCircle
+            ClippedCircle,
+            DaggerWheelPicker
         ).sortedBy { it.title }
     }
 }
