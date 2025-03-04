@@ -10,6 +10,7 @@ import com.artemissoftware.amphitritetheater2.circlereveal.CircleRevealScreen
 import com.artemissoftware.amphitritetheater2.clippedcircle.ClippedCircleScreen
 import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldScreen
 import com.artemissoftware.amphitritetheater2.custom.CustomScaffoldViewModel
+import com.artemissoftware.amphitritetheater2.customshapes.CustomShapesScreen
 import com.artemissoftware.amphitritetheater2.daggerwheelpicker.DaggerWheelPickerScreen
 import com.artemissoftware.amphitritetheater2.demo.DemoSelectorScreen
 import com.artemissoftware.amphitritetheater2.dropdownmenu.ContextDropDownScreen
@@ -48,6 +49,10 @@ fun DemoNavGraph(
 
         composable<Route.CustomScaffold> {
             CustomScaffoldScreen(viewModel = customScaffoldStateViewModel)
+        }
+
+        composable<Route.CustomShapes> {
+            CustomShapesScreen()
         }
 
         composable<Route.DaggerWheelPicker> {
