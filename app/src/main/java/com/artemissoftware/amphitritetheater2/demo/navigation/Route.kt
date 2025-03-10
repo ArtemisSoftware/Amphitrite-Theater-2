@@ -39,6 +39,9 @@ sealed class Route {
 
     @Serializable
     object CustomShapes
+
+    @Serializable
+    object ChartBar
 }
 
 sealed class Destination(val title: String) {
@@ -54,6 +57,7 @@ sealed class Destination(val title: String) {
     data object ClippedCircle : Destination(title = "Clipped Circle")
     data object DaggerWheelPicker : Destination(title = "Dagger Wheel Picker")
     data object CustomShapes : Destination(title = "Custom Shapes")
+    data object ChartBar : Destination(title = "Bar Graph")
 
     companion object{
 
@@ -71,6 +75,7 @@ sealed class Destination(val title: String) {
                 ClippedCircle -> Route.ClippedCircle
                 DaggerWheelPicker -> Route.DaggerWheelPicker
                 CustomShapes -> Route.CustomShapes
+                ChartBar -> Route.ChartBar
                 else -> Route.Home
             }
         }
@@ -86,7 +91,8 @@ sealed class Destination(val title: String) {
             CustomScaffold,
             ClippedCircle,
             DaggerWheelPicker,
-            CustomShapes
+            CustomShapes,
+            ChartBar
         ).sortedBy { it.title }
     }
 }
