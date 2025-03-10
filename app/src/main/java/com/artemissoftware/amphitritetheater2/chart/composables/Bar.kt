@@ -10,10 +10,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.artemissoftware.amphitritetheater2.chart.bar.BarType
+import com.artemissoftware.amphitritetheater2.chart.bar.BarType.Companion.getShape
 import com.artemissoftware.amphitritetheater2.ui.theme.AmphitriteTheater2Theme
 
 @Composable
@@ -21,21 +25,20 @@ internal fun Bar(
     height: Dp,
     barWidth: Dp,
     barColor: Color,
+    barShape: Shape,
     graphBarHeight: Float,
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
-//            .clip(barShap)
+            .clip(barShape)
             .width(barWidth)
-            .height(height/* - 10.dp*/)
-//            .background(Color.Transparent)
-        ,
+            .height(height),
         contentAlignment = BottomCenter
     ) {
         Box(
             modifier = Modifier
-//                .clip(barShap)
+                .clip(barShape)
                 .fillMaxWidth()
                 .fillMaxHeight(graphBarHeight)
                 .background(barColor)
@@ -53,7 +56,8 @@ private fun BarPreview() {
             height = 200.dp,
             barWidth = 10.dp,
             graphBarHeight = 0.5F,
-            barColor = Color.Red
+            barColor = Color.Red,
+            barShape = getShape(BarType.TOP_CURVED)
         )
     }
 }
