@@ -106,3 +106,27 @@ A custom wheel picker
 |           Dagger-WheelPicker #1            |    
 |:------------------------------------------:|
 | <img src="images/AmphitriteTheater_5.jpg"> |
+
+
+
+## Bar Graph
+
+An animated bar chart
+
+#### Preview
+
+
+|                Bar Graph #1                |    
+|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> |
+
+## Animated Android logo
+
+Android logo that looks where you drag to
+
+#### Preview
+
+
+|          Animated Android logo #1          |          Animated Android logo #2          |
+|:------------------------------------------:|:------------------------------------------:|
+| <img src="images/AmphitriteTheater_5.jpg"> | <img src="images/AmphitriteTheater_5.jpg"> |

@@ -42,6 +42,9 @@ sealed class Route {
 
     @Serializable
     object ChartBar
+
+    @Serializable
+    object AndroidLogoAnimation
 }
 
 sealed class Destination(val title: String) {
@@ -58,6 +61,7 @@ sealed class Destination(val title: String) {
     data object DaggerWheelPicker : Destination(title = "Dagger Wheel Picker")
     data object CustomShapes : Destination(title = "Custom Shapes")
     data object ChartBar : Destination(title = "Bar Graph")
+    data object AndroidLogoAnimation : Destination(title = "Android Logo Animation")
 
     companion object{
 
@@ -76,6 +80,7 @@ sealed class Destination(val title: String) {
                 DaggerWheelPicker -> Route.DaggerWheelPicker
                 CustomShapes -> Route.CustomShapes
                 ChartBar -> Route.ChartBar
+                AndroidLogoAnimation -> Route.AndroidLogoAnimation
                 else -> Route.Home
             }
         }
@@ -92,7 +97,8 @@ sealed class Destination(val title: String) {
             ClippedCircle,
             DaggerWheelPicker,
             CustomShapes,
-            ChartBar
+            ChartBar,
+            AndroidLogoAnimation
         ).sortedBy { it.title }
     }
 }

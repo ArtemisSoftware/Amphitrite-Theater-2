@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.artemissoftware.amphitritetheater2.animation.androidlogo.AndroidLogoScreen
 import com.artemissoftware.amphitritetheater2.bouncingball.BouncingBallScreen
 import com.artemissoftware.amphitritetheater2.chart.bar.BarGraphScreen
 import com.artemissoftware.amphitritetheater2.circlereveal.CircleRevealScreen
@@ -32,6 +33,10 @@ fun DemoNavGraph(
         startDestination = startDestination,
         modifier = modifier
     ) {
+        composable<Route.AndroidLogoAnimation> {
+            AndroidLogoScreen()
+        }
+
         composable<Route.BouncingBall> {
             BouncingBallScreen()
         }
