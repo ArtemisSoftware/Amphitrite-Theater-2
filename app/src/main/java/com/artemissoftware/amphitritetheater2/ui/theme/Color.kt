@@ -13,3 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 val Grey10 = Color(0xffcccccc)
 
 val Android = Color(0xFF46E68D)
+
+val PINK200 = Color(0xFFCD5D88)
+val BLUE200 = Color(0xFF52B0E6)
+val RED600 = Color(0xFFED3226)
