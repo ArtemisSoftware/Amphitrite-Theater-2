@@ -1,4 +1,4 @@
-package com.artemissoftware.amphitritetheater2.chart.composables
+package com.artemissoftware.amphitritetheater2.chart.bar.composables
 
 import android.graphics.Paint
 import androidx.compose.foundation.Canvas

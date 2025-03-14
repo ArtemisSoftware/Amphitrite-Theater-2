@@ -22,9 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.artemissoftware.amphitritetheater2.chart.bar.BarType.Companion.getShape
-import com.artemissoftware.amphitritetheater2.chart.composables.FullBar
-import com.artemissoftware.amphitritetheater2.chart.composables.XAxisLine
-import com.artemissoftware.amphitritetheater2.chart.composables.YScaleLines
+import com.artemissoftware.amphitritetheater2.chart.bar.composables.FullBar
+import com.artemissoftware.amphitritetheater2.chart.bar.composables.XAxisLine
+import com.artemissoftware.amphitritetheater2.chart.bar.composables.YScaleLines
 import com.artemissoftware.amphitritetheater2.ui.theme.AmphitriteTheater2Theme
 
 @Composable

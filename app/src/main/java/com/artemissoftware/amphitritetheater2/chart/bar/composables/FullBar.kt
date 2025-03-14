@@ -1,4 +1,4 @@
-package com.artemissoftware.amphitritetheater2.chart.composables
+package com.artemissoftware.amphitritetheater2.chart.bar.composables
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
