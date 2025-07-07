@@ -58,6 +58,9 @@ dependencies {
     implementation(libs.coil.network.okhttp)
     implementation(libs.snapper)
 
+    implementation(libs.glance)
+    implementation(libs.glance.appwidget)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
