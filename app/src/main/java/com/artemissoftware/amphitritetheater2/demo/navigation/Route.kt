@@ -48,6 +48,9 @@ sealed class Route {
 
     @Serializable
     object ArView
+
+    @Serializable
+    object Zoom
 }
 
 sealed class Destination(val title: String) {
@@ -66,6 +69,7 @@ sealed class Destination(val title: String) {
     data object ChartBar : Destination(title = "Bar Graph")
     data object AndroidLogoAnimation : Destination(title = "Android Logo Animation")
     data object ArView : Destination(title = "360 degrees view")
+    data object Zoom : Destination(title = "Zoom content")
 
     companion object{
 
@@ -86,6 +90,7 @@ sealed class Destination(val title: String) {
                 ChartBar -> Route.ChartBar
                 AndroidLogoAnimation -> Route.AndroidLogoAnimation
                 ArView -> Route.ArView
+                Zoom -> Route.Zoom
                 else -> Route.Home
             }
         }
@@ -104,7 +109,8 @@ sealed class Destination(val title: String) {
             CustomShapes,
             ChartBar,
             AndroidLogoAnimation,
-            ArView
+            ArView,
+            Zoom
         ).sortedBy { it.title }
     }
 }
