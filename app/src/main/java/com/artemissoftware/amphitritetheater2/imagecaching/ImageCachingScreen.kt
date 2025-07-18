@@ -36,7 +36,7 @@ fun ImageCachingScreen() {
 
     val imageLoader = LocalContext.current.imageLoader
     val imageUrl = "https://static.wikia.nocookie.net/saintseiya/images/6/65/Marina-Sorento-anime.jpg"
-    val imageUrl2 = "https://ovicio.com.br/wp-content/uploads/2024/06/20240616-kasa-saintseiya.jpeg"
+    val imageUrl2 = "https://i.pinimg.com/736x/37/ac/50/37ac5086ff52801206d8adf0809d94ff.jpg"
 
     Column(
         modifier = Modifier

@@ -1,7 +1,8 @@
+@file:OptIn(ExperimentalCoilApi::class)
+
 package com.artemissoftware.amphitritetheater2.ar
 
 import android.content.Context
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
@@ -12,17 +13,16 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
-import coil3.ImageLoader
+import coil3.annotation.ExperimentalCoilApi
 import coil3.compose.AsyncImage
+import coil3.imageLoader
 import coil3.request.CachePolicy
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 @Composable
-fun NetworkProduct360Viewer(
+fun Network360Viewer(
     modifier: Modifier = Modifier,
     frameCount: Int = 18,
     baseUrl: String = "https://raw.githubusercontent.com/rameshvoltella/360-Productview-Android-App/refs/heads/master/app/src/main/assets/images/image1_",
@@ -70,7 +70,7 @@ fun NetworkProduct360Viewer(
 }
 
 @Composable
-fun NetworkProduct360ViewerSlowerSpin(
+fun Network360ViewerSlowerSpin(
     modifier: Modifier = Modifier,
     frameCount: Int = 18,
     baseUrl: String = "https://raw.githubusercontent.com/rameshvoltella/360-Productview-Android-App/refs/heads/master/app/src/main/assets/images/image1_",
@@ -117,80 +117,5 @@ fun NetworkProduct360ViewerSlowerSpin(
 
         Text("CurrentFrame: $currentFrame")
 
-    }
-}
-
-@Composable
-fun Preload360Images(
-    context: Context = LocalContext.current,
-    frameCount: Int,
-    baseUrl: String,
-    extension: String
-) {
-    LaunchedEffect(Unit) {
-        val imageLoader = ImageLoader(context)
-        repeat(frameCount) { i ->
-            val url = "$baseUrl${i + 1}$extension"
-            val request = ImageRequest.Builder(context)
-                .data(url)
-                .build()
-            imageLoader.enqueue(request)
-        }
-    }
-}
-
-@Composable
-fun AggressivePreload360Images(
-    context: Context = LocalContext.current,
-    frameCount: Int,
-    baseUrl: String,
-    extension: String
-) {
-    LaunchedEffect(Unit) {
-        val imageLoader = ImageLoader(context)
-        withContext(Dispatchers.IO) {
-            repeat(frameCount) { i ->
-                val url = "$baseUrl${i + 1}$extension"
-                val request = ImageRequest.Builder(context)
-                    .data(url)
-                    .memoryCacheKey(url)
-                    .diskCacheKey(url)
-                    .memoryCachePolicy(CachePolicy.ENABLED)
-                    .diskCachePolicy(CachePolicy.ENABLED)
-                    .allowHardware(false) // Ensure decode to bitmap
-                    .build()
-
-                // Force image to load and decode
-                imageLoader.execute(request)
-            }
-        }
-    }
-}
-
-@Composable
-fun PreloadAllFrames(
-    frameCount: Int,
-    baseUrl: String,
-    extension: String,
-    context: Context = LocalContext.current
-) {
-    LaunchedEffect(Unit) {
-        val imageLoader = ImageLoader(context)
-
-        withContext(Dispatchers.IO) {
-            repeat(frameCount) { index ->
-                val url = "$baseUrl${index + 1}$extension"
-                val request = ImageRequest.Builder(context)
-                    .data(url)
-                    .memoryCacheKey(url)
-                    .diskCacheKey(url)
-                    .memoryCachePolicy(CachePolicy.ENABLED)
-                    .diskCachePolicy(CachePolicy.ENABLED)
-                    .allowHardware(false)
-                    .build()
-
-                imageLoader.execute(request)
-            }
-        }
     }
 }
