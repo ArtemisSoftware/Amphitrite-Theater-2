@@ -51,6 +51,9 @@ sealed class Route {
 
     @Serializable
     object Zoom
+
+    @Serializable
+    object QuickZoom
 }
 
 sealed class Destination(val title: String) {
@@ -70,6 +73,7 @@ sealed class Destination(val title: String) {
     data object AndroidLogoAnimation : Destination(title = "Android Logo Animation")
     data object ArView : Destination(title = "360 degrees view")
     data object Zoom : Destination(title = "Zoom content")
+    data object QuickZoom : Destination(title = "Quick Zoom")
 
     companion object{
 
@@ -91,6 +95,7 @@ sealed class Destination(val title: String) {
                 AndroidLogoAnimation -> Route.AndroidLogoAnimation
                 ArView -> Route.ArView
                 Zoom -> Route.Zoom
+                QuickZoom -> Route.QuickZoom
                 else -> Route.Home
             }
         }
@@ -110,7 +115,8 @@ sealed class Destination(val title: String) {
             ChartBar,
             AndroidLogoAnimation,
             ArView,
-            Zoom
+            Zoom,
+            QuickZoom
         ).sortedBy { it.title }
     }
 }
