@@ -13,7 +13,6 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -28,7 +27,8 @@ fun ZoomableContent(
     modifier: Modifier = Modifier,
     minScale: Float = 1f,
     maxScale: Float = 5f,
-    doubleTapZoom: Float = 2f
+    doubleTapZoom: Float = 2f,
+    isContentZoomed: (Boolean) -> Unit = {}
 ) {
 
     var scale by remember { mutableFloatStateOf(1f) }
@@ -46,6 +46,7 @@ fun ZoomableContent(
 
                     val newScale = scale * zoom
                     scale = newScale.coerceIn(minScale, maxScale)
+                    isContentZoomed(scale > 1f)
 
                     val centerX = size.width / 2
                     val centerY = size.height / 2
@@ -79,6 +80,7 @@ fun ZoomableContent(
                         } else {
                             scale = doubleTapZoom
                         }
+                        isContentZoomed(scale > 1f)
                     }
                 )
             }

@@ -16,9 +16,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -50,15 +52,18 @@ fun QuickZoomScreen() {
     )
 
     val pagerState = rememberPagerState(pageCount = { list.count() })
+    var isZoomed by remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize()) {
         ZoomableContent(
             modifier = Modifier
                 .fillMaxSize(),
+            isContentZoomed = { zooming -> isZoomed = zooming },
             content = {
                 HorizontalPager(
                     modifier = Modifier.fillMaxSize(),
                     state = pagerState,
+                    userScrollEnabled = !isZoomed,
                 ) { index ->
                     BannerItem(image = list.get(index = index))
                 }
